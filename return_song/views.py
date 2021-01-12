@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from .forms import SearchForm
 
 import spotipy
@@ -16,7 +16,6 @@ def home(request):
     form = SearchForm(request.POST or None)
     if form.is_valid():
         form.save()
-        # response = request.POST
         artist_choice = request.POST['artist_search']
 
         try:
