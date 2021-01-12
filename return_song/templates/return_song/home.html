@@ -1,0 +1,28 @@
+{% extends "return_song/base.html"  %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group" name="artist_name">
+                <legend class="border-bottom mb-4">Top Track</legend>
+                {{ form.as_p }}
+                <input type="submit" value="Enter">
+            </fieldset>
+            {% if searched == 0 %}
+                <br>
+            {% elif searched == 1%}
+                <hr>
+                <div>
+                    <h6>Showing Top Track for: </h6> {{ artist_name }}
+                </div>
+                <br>
+                <div>
+                    <h6>Top Track: </h6> {{ top_track }}
+                </div>
+            {% elif searched == 2 %}
+                <hr>
+                {{ error }}
+            {% endif %}
+        </form>
+    </div>
+{% endblock content %}
