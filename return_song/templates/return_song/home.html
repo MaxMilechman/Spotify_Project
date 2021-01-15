@@ -1,12 +1,18 @@
 {% extends "return_song/base.html"  %}
 {% block content %}
-    <div class="content-section">
+    <div class="content-section" style="text-align:center">
         <form method="POST">
             {% csrf_token %}
             <fieldset class="form-group" name="artist_name">
-                <legend class="border-bottom mb-4">Top Track</legend>
-                {{ form.as_p }}
-                <input type="submit" value="Enter">
+                <img class="mt-5" src="/static/return_song/title_image.png">
+<!--                <legend class="mb-4">Top Track</legend>-->
+<!--                <h6>Artist Search</h6>-->
+                <div>
+                    {{ form.artist_search }}
+                </div>
+                <div class="mt-2">
+                    <input type="submit" value="Enter">
+                </div>
             </fieldset>
             {% if searched == 0 %}
                 <br>
