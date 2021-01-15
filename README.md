@@ -1,4 +1,4 @@
-![alt-text](return_song/static/return_song/title_image_README.png)
+![alt-text](return_song/static/return_song/title_image_rm.png)
 
 Top Track is a web-based Python application where a user can search for any artist, and the top track of that artist will be displayed.
 
