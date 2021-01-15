@@ -19,6 +19,6 @@ from return_song import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('return_song.urls')),
+    path('', include('return_song.urls'), name='home'),
     # path('answer/', views.answer, name='answer'),
 ]
