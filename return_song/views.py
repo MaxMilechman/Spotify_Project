@@ -44,22 +44,3 @@ def home(request):
         'searched': searched
     }
     return render(request, 'return_song/home.html', context)
-
-
-# def answer(request):
-#     form = SearchForm()
-#     context = {
-#         'form': form
-#     }
-#     return render(request, 'return_song/answer.html', context)
-
-
-# def search_view(request):
-#     form = SearchForm(request.POST or None)
-#     if form.is_valid():
-#         form.save()
-#         form = SearchForm()
-#     context = {
-#         'form': form
-#     }
-#     return render(request, 'return_song/search.html', context)
