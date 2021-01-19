@@ -1,3 +1,1 @@
-web: gunicorn spotify_project_new.wsgi:application --log-file - --log-level debug
-python manage.py collectstatic --noinput
-manage.py migrate
+web: gunicorn spotify_project_new.wsgi --log-file -
