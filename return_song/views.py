@@ -10,8 +10,8 @@ os.environ.get('SPOTIPY_CLIENT_SECRET')
 
 # spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
 spotify = spotipy.Spotify(auth_manager=SpotifyClientCredentials(
-    client_id=os.environ.get('SPOTIPY_CLIENT_ID'),
-    client_secret=os.environ.get('SPOTIPY_CLIENT_SECRET'),
+    client_id='SPOTIPY_CLIENT_ID',
+    client_secret='SPOTIPY_CLIENT_SECRET',
 ))
 
 
