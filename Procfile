@@ -1,1 +1,1 @@
-web: gunicorn spotify_project_new.wsgi --log-file -
+web: gunicorn spotify_project.wsgi
