@@ -8,11 +8,11 @@ import os
 SPOTIPY_CLIENT_ID = os.environ.get('SPOTIPY_CLIENT_ID')
 SPOTIPY_CLIENT_SECRET = os.environ.get('SPOTIPY_CLIENT_SECRET')
 
-spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
-# spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(
-#     client_id='SPOTIPY_CLIENT_ID',
-#     client_secret='SPOTIPY_CLIENT_SECRET',
-# ))
+# spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
+spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(
+    client_id='SPOTIPY_CLIENT_ID',
+    client_secret='SPOTIPY_CLIENT_SECRET',
+))
 
 
 def home(request):
