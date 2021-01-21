@@ -2,17 +2,23 @@ from django.shortcuts import render
 from .forms import SearchForm
 
 import spotipy
-from spotipy.oauth2 import SpotifyClientCredentials
+from spotipy.oauth2 import SpotifyClientCredentials, SpotifyOAuth
 import os
 
 # SPOTIPY_CLIENT_ID = os.environ.get('SPOTIPY_CLIENT_ID')
 # SPOTIPY_CLIENT_SECRET = os.environ.get('SPOTIPY_CLIENT_SECRET')
 
-# spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
-spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(
+sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
     client_id='SPOTIPY_CLIENT_ID',
     client_secret='SPOTIPY_CLIENT_SECRET',
+    redirect_uri='http://toptrack2020.herokuapp.com/'
 ))
+
+# spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
+# spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(
+#     client_id='SPOTIPY_CLIENT_ID',
+#     client_secret='SPOTIPY_CLIENT_SECRET',
+# ))
 
 
 def home(request):
@@ -23,11 +29,11 @@ def home(request):
         artist_choice = request.POST['artist_search']
 
         try:
-            result = spotify.search(q=f'artist:{artist_choice}')
+            result = sp.search(q=f'artist:{artist_choice}')
             artist_id = result['tracks']['items'][0]['artists'][0]['id']
 
-            artist = spotify.artist(f'{artist_id}')
-            results = spotify.artist_top_tracks(f'spotify:artist:{artist_id}')
+            artist = sp.artist(f'{artist_id}')
+            results = sp.artist_top_tracks(f'spotify:artist:{artist_id}')
 
             searched = 1
             artist_name = artist['name']
