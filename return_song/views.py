@@ -1,13 +1,12 @@
 from django.shortcuts import render
 from .forms import SearchForm
-from spotify_project.settings import SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET
 
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 import os
 
-# SPOTIPY_CLIENT_ID = os.environ.get('SPOTIPY_CLIENT_ID')
-# SPOTIPY_CLIENT_SECRET = os.environ.get('SPOTIPY_CLIENT_SECRET')
+SPOTIPY_CLIENT_ID = os.environ.get('SPOTIPY_CLIENT_ID')
+SPOTIPY_CLIENT_SECRET = os.environ.get('SPOTIPY_CLIENT_SECRET')
 
 # spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
 spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(
