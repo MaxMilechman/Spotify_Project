@@ -15,23 +15,19 @@ SPOTIPY_CLIENT_SECRET = os.environ.get('SPOTIPY_CLIENT_SECRET')
 #     redirect_uri='http://127.0.0.1:8000/'
 # ))
 
-# spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
-spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(
-    client_id='SPOTIPY_CLIENT_ID',
-    client_secret='SPOTIPY_CLIENT_SECRET',
-))
+spotify = spotipy.Spotify(auth_manager=SpotifyClientCredentials())
+# spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(
+#     client_id='SPOTIPY_CLIENT_ID',
+#     client_secret='SPOTIPY_CLIENT_SECRET',
+# ))
 
 
 def home(request):
     artist_name, top_track, error, searched = '', '', '', 0
-    artist_choice = ''
     form = SearchForm(request.POST or None)
     if form.is_valid():
         form.save()
-        try:
-            artist_choice = request.POST['artist_search']
-        except EOFError:
-            print(EOFError)
+        artist_choice = request.POST['artist_search']
 
         try:
             result = spotify.search(q=f'artist:{artist_choice}')
