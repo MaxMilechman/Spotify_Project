@@ -15,11 +15,11 @@ SPOTIPY_CLIENT_SECRET = os.environ.get('SPOTIPY_CLIENT_SECRET')
 #     redirect_uri='http://127.0.0.1:8000/'
 # ))
 
-spotify = spotipy.Spotify(auth_manager=SpotifyClientCredentials())
-# spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(
-#     client_id='SPOTIPY_CLIENT_ID',
-#     client_secret='SPOTIPY_CLIENT_SECRET',
-# ))
+# spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
+spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(
+    client_id='SPOTIPY_CLIENT_ID',
+    client_secret='SPOTIPY_CLIENT_SECRET',
+))
 
 
 def home(request):
