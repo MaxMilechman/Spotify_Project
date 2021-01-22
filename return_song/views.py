@@ -1,21 +1,12 @@
 from django.shortcuts import render
 from .forms import SearchForm
-
 import spotipy
-from spotipy.oauth2 import SpotifyClientCredentials, SpotifyOAuth
+from spotipy.oauth2 import SpotifyClientCredentials
 import os
 
 SPOTIPY_CLIENT_ID = os.environ.get('SPOTIPY_CLIENT_ID')
 SPOTIPY_CLIENT_SECRET = os.environ.get('SPOTIPY_CLIENT_SECRET')
 
-# spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(
-#     scope='user-library-read',
-#     client_id='SPOTIPY_CLIENT_ID',
-#     client_secret='SPOTIPY_CLIENT_SECRET',
-#     redirect_uri='http://127.0.0.1:8000/'
-# ))
-
-# spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
 spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(
     client_id=SPOTIPY_CLIENT_ID,
     client_secret=SPOTIPY_CLIENT_SECRET,
@@ -45,7 +36,6 @@ def home(request):
             error = 'We can\'t find an artist by that name. Try again!'
 
         form = SearchForm()
-        # return redirect('answer')
 
     context = {
         'form': form,

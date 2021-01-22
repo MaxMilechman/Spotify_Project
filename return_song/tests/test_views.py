@@ -1,6 +1,5 @@
 from django.test import SimpleTestCase, RequestFactory
 from django.urls import reverse, resolve
-
 from return_song import views
 
 
