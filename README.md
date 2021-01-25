@@ -21,9 +21,9 @@ and return the most popular song/track for any given artist.
 
 ## Noteable Application Features
 * Concise and organized OOP style to keep code readable and malleable 
-* Use of Git for version control and security
-* Set environment variables of Spotify's Client ID, Client Secret, and Secret Key to keep the application safe and secure
-* Added testing suite to make sure application runs smoothly and without errors
+* Use of Git for version control and added security
+* Set environment variables of Spotify's Client ID, Client Secret, and Secret Key to keep the application safe and reliable
+* Added testing suite to make sure application runs smoothly without errors
 * Included requirements.txt file for easy installation
 * Exceptionally strong README.md
 
@@ -33,16 +33,12 @@ and return the most popular song/track for any given artist.
 
 * Python version 3.9.0 or greater is required
 * Download the ZIP of this project and unzip the files
-
-
 * Navigate to https://developer.spotify.com/ and click on the Dashboard tab
 * Create a new Spotify account or log in to an existing Spotify account
 * Create a new app in order to receive a Client ID and Client Secret in order to access Spotify's API
 * Set environment variables of SPOTIPY_CLIENT_ID and SPOTIPY_CLIENT_SECRET or simply replace all instances 
   of those variables in the code with the CLIENT_ID and CLIENT_SECRET given by Spotify. 
   (You can find these variables in settings.py and views.py)
-
-
 * Naviagte to the projects root directory in your command line
 * Make sure that a virtual environment is active
 * On the Command line, in the project's root directory, type 'pip install -r requirements.txt' to automatically install project dependencies
