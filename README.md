@@ -22,10 +22,9 @@ and return the most popular song/track for any given artist.
 ## Noteable Application Features
 * Concise and organized OOP style to keep code readable and malleable 
 * Use of Git for version control and added security
-* Use of secret management to set environment variables of Client ID, Client Secret, and Secret Key to keep the application safe and reliable
+* Used secret management to set environment variables of Client ID, Client Secret, and Secret Key to keep the application safe and reliable
 * Added testing suite to make sure application runs smoothly without errors
 * Included requirements.txt file for easy installation
-* Exceptionally strong README.md
 
 ---
 
