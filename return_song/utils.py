@@ -1,7 +1,6 @@
 import spotipy
-from spotipy.oauth2 import SpotifyClientCredentials
 import os
-
+from spotipy.oauth2 import SpotifyClientCredentials
 from return_song.forms import SearchForm
 
 SPOTIPY_CLIENT_ID = os.environ.get('SPOTIPY_CLIENT_ID')
