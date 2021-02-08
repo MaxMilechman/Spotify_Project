@@ -18,4 +18,3 @@ class TestViews(SimpleTestCase):
         self.assertEquals(response.status_code, 200)
         self.assertTemplateUsed(response, 'return_song/home.html')
         self.assertTemplateUsed(response, 'return_song/base.html')
-
